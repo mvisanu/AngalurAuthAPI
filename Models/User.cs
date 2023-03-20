@@ -12,7 +12,7 @@ namespace AngularAuthAPI.Models
 
         public string Email { get; set; } = string.Empty;
 
-        public string Useranme { get; set; } = string.Empty;
+        public string Username { get; set; } = string.Empty;
 
         public string Password { get; set; } = string.Empty;
 

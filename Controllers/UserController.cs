@@ -22,7 +22,7 @@ namespace AngularAuthAPI.Controllers
         {
             if (userObj == null) return BadRequest("User cannot be empty");
 
-            var user = await _authContext.Users.FirstOrDefaultAsync(x => x.Useranme == userObj.Useranme && x.Password == userObj.Password);
+            var user = await _authContext.Users.FirstOrDefaultAsync(x => x.Username == userObj.Username && x.Password == userObj.Password);
 
             if (user == null) return NotFound(new { Message = "User not found!" });
 
