@@ -32,6 +32,8 @@ builder.Services.AddAuthentication(x =>
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration.GetValue<string>("TokenKey"))),
         ValidateAudience = false,
         ValidateIssuer = false,
+        ClockSkew = TimeSpan.Zero
+       
     };
 });
 
@@ -56,6 +58,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseCors("CorPolicy");
+
+
 
 app.UseAuthentication();
 
